@@ -11,7 +11,9 @@ const REDIRECT_URI = "https://sajatoldalad.com/auth/twitch/callback";
 
 // Statikus fájlok kiszolgálása
 app.use(express.static("public"));
-
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/teszt.html");
+});
 app.get("/auth/twitch/callback", async (req, res) => {
     const code = req.query.code;
 
