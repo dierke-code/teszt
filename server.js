@@ -9,6 +9,9 @@ const CLIENT_ID = process.env.TWITCH_CLIENT_ID;
 const CLIENT_SECRET = process.env.TWITCH_CLIENT_SECRET;
 const REDIRECT_URI = "https://sajatoldalad.com/auth/twitch/callback";
 
+// Statikus fájlok kiszolgálása
+app.use(express.static("public"));
+
 app.get("/auth/twitch/callback", async (req, res) => {
     const code = req.query.code;
 
